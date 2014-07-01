@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8E41006819616A4D001ABE16 /* UIColor+Shorthands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E41006719616A4D001ABE16 /* UIColor+Shorthands.swift */; };
 		8EA0564F194F39F500FA580B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA0564E194F39F500FA580B /* AppDelegate.swift */; };
 		8EA05651194F39F500FA580B /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8EA05650194F39F500FA580B /* GameScene.sks */; };
 		8EA05653194F39F500FA580B /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA05652194F39F500FA580B /* GameScene.swift */; };
@@ -27,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8E41006719616A4D001ABE16 /* UIColor+Shorthands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Shorthands.swift"; sourceTree = "<group>"; };
 		8EA05649194F39F500FA580B /* SwiftTeamSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTeamSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0564D194F39F500FA580B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EA0564E194F39F500FA580B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 				8EA0564E194F39F500FA580B /* AppDelegate.swift */,
 				8EA05650194F39F500FA580B /* GameScene.sks */,
 				8EA05652194F39F500FA580B /* GameScene.swift */,
+				8E41006719616A4D001ABE16 /* UIColor+Shorthands.swift */,
 				8EA05654194F39F500FA580B /* GameViewController.swift */,
 				8EA05656194F39F500FA580B /* Main.storyboard */,
 				8EA05659194F39F500FA580B /* Images.xcassets */,
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8EA05653194F39F500FA580B /* GameScene.swift in Sources */,
+				8E41006819616A4D001ABE16 /* UIColor+Shorthands.swift in Sources */,
 				8EA05655194F39F500FA580B /* GameViewController.swift in Sources */,
 				8EA0564F194F39F500FA580B /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				8EA0566B194F39F500FA580B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		8EA0566C194F39F500FA580B /* Build configuration list for PBXNativeTarget "SwiftTeamSelectTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				8EA0566E194F39F500FA580B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
