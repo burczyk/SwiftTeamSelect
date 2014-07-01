@@ -75,7 +75,7 @@ If you change method `func createPlayers()` to your implementation of Sprites wi
 
 #### FlatUI colors
 When drawing Sprites I used [FlatUI](http://flatuicolors.com/) colors.
-`UIColor+Shorthands.swift` file is an extension to `UIColor` class that adds all colors from that site as convenience methods:
+[UIColor+Shorthands.swift](https://github.com/burczyk/SwiftTeamSelect/blob/master/SwiftTeamSelect/UIColor%2BShorthands.swift) file is an extension to `UIColor` class that adds all colors from that site as convenience methods:
 
 ```
 UIColor.turquoise()
@@ -101,3 +101,6 @@ UIColor.asbestos()
 ```
 
 It also adds [convenience initializer](https://developer.apple.com/library/prerelease/ios/documentation/swift/conceptual/swift_programming_language/Initialization.html) to `UIColor` so it can be initialized with `(0...255)` ints instead of `(0...1.0)` floats, e.g. `UIColor(26, 188, 156)` gives us Turquoise color.
+
+#### License
+**SwiftTeamSelect** is available under the MIT license. See the LICENSE file for more info.
