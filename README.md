@@ -13,7 +13,7 @@ Now, when Swift gains more and more hype and it's time to practice some real cod
 
 ### Main concept
 
-The whole scene works like a horizontal UIScrollView with one difference - while item moves to the center it becomes bigger.
+The whole scene works like a horizontal UIScrollView (but it's written purely in SpriteKit!) with one difference - while item moves to the center it becomes bigger.
 There are 2 guides `leftGuide` and `rightGuide` which are minimum and maximum `x` value for moving Sprite. There is also third implicit guide which is half of the screen's width - center player is placed on that position while it's neighbours are arranged on both sides.
 
 #### Scale computation
@@ -48,7 +48,7 @@ Method
 func calculateZIndexesForPlayers()
 ```
 
-calculates them in increasingly from 0 to centerPlayer and then backwards.
+calculates them increasingly from 0 to centerPlayer and then backwards.
 In the beginning we start e.g. with zIndexes: `[0,1,2,3,2,1,0]`. If we move center player to the left they become `[0,1,2,1,0,-1,-2]` and centerPlayer is still on top and it can cover it's neighbours when dragged.
 
 #### Scrolling
@@ -63,14 +63,13 @@ First one is responsible for dragging Sprite when we move our finger on the scre
 It calculates translation for each movement and calls helper method.
 
 
-`touchesEnded` is responsible for pulling each player to appropriate guide based on it's position - when this method finishes all players are placed on `leftGuide`, screen center or `rightGuide`.
+`touchesEnded` is responsible for pulling each player to appropriate guide based on it's position when touch stops - when this method finishes all players are placed on `leftGuide`, screen center or `rightGuide`.
 
 Both `touches*` methods use `SKActions` to make animations smooth.
 
 #### Usage and adoption
 
-For implementation details check [GameScene.swift](https://github.com/burczyk/SwiftTeamSelect/blob/master/SwiftTeamSelect/GameScene.swift).
-It is complete `SKScene` subclass that you can use in your project.
+For implementation details check [GameScene.swift](https://github.com/burczyk/SwiftTeamSelect/blob/master/SwiftTeamSelect/GameScene.swift) - it is complete `SKScene` subclass that you can use in your project.
 If you change method `func createPlayers()` to your implementation of Sprites with textures instead of colored rectangles it can become even more interesting ;)
 
 #### FlatUI colors
