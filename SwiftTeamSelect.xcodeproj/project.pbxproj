@@ -29,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		8E41006719616A4D001ABE16 /* UIColor+Shorthands.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Shorthands.swift"; sourceTree = "<group>"; };
+		8E41006D1962E2BD001ABE16 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		8EA05649194F39F500FA580B /* SwiftTeamSelect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTeamSelect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EA0564D194F39F500FA580B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8EA0564E194F39F500FA580B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +97,7 @@
 		8EA0564C194F39F500FA580B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8E41006D1962E2BD001ABE16 /* README.md */,
 				8EA0564D194F39F500FA580B /* Info.plist */,
 			);
 			name = "Supporting Files";
