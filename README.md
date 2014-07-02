@@ -32,12 +32,7 @@ It returns scale from `(0.5..1)` range based on simple assumptions:
 
 Our scale function can be seen like this in mathematical sense, where collapse points are three guides described above:
 
-```
-      ^
-____/   \____
-
-
-```
+![Scale function](https://raw.githubusercontent.com/burczyk/SwiftTeamSelect/master/assets/ScaleFunction.png)
 
 #### Players' depth
 To achieve behavior when center player covers it's neighbours when scrolling I used `zIndex` property of `SKSpriteNode` class. 
