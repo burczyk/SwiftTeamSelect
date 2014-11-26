@@ -10,29 +10,29 @@
 	<string>SwiftTeamSelect</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1112DB1F-0D99-4825-A8BC-BF9435FE4AD4</key>
+		<key>101092253F7CCF69445BB2B00AC7B20D84C40D6E</key>
 		<string>https://github.com/burczyk/SwiftTeamSelect.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>SwiftTeamSelect.xcodeproj/project.xcworkspace</string>
+	<string>SwiftTeamSelect.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1112DB1F-0D99-4825-A8BC-BF9435FE4AD4</key>
+		<key>101092253F7CCF69445BB2B00AC7B20D84C40D6E</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/burczyk/SwiftTeamSelect.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1112DB1F-0D99-4825-A8BC-BF9435FE4AD4</string>
+	<string>101092253F7CCF69445BB2B00AC7B20D84C40D6E</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1112DB1F-0D99-4825-A8BC-BF9435FE4AD4</string>
+			<string>101092253F7CCF69445BB2B00AC7B20D84C40D6E</string>
 			<key>IDESourceControlWCCName</key>
 			<string>SwiftTeamSelect</string>
 		</dict>

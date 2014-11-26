@@ -23,7 +23,7 @@ extension UIColor {
     
     //array of all flatUI colors
     
-    class func flatUIColors() -> UIColor[] {
+    class func flatUIColors() -> [UIColor] {
         return [UIColor.turquoise(), UIColor.emerald(), UIColor.peterRiver(), UIColor.amethyst(), UIColor.wetAsphalt(), UIColor.greenSea(), UIColor.nephritis(), UIColor.belizeHole(), UIColor.wisteria(), UIColor.midnightBlue(), UIColor.sunFlower(), UIColor.carrot(), UIColor.alizarin(), UIColor.clouds(), UIColor.concrete(), UIColor.orange(), UIColor.pumpkin(), UIColor.pomegranate(), UIColor.silver(), UIColor.asbestos()]
     }
     

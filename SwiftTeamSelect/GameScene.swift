@@ -14,18 +14,18 @@ class GameScene: SKScene {
         case Left, Center, Right
     }
     
-    var players = SKSpriteNode[]()
+    var players = [SKSpriteNode]()
     
     var leftPlayer: SKSpriteNode?
     var centerPlayer: SKSpriteNode?
     var rightPlayer: SKSpriteNode?
     
     var leftGuide : CGFloat {
-        return round(view.bounds.width / 6.0)
+        return round(view!.bounds.width / 6.0)
     }
     
     var rightGuide : CGFloat {
-        return view.bounds.width - leftGuide
+        return view!.bounds.width - leftGuide
     }
     
     var gap : CGFloat {
@@ -35,11 +35,15 @@ class GameScene: SKScene {
     
     // Initialization
     
-    init(size: CGSize) {
+    override init(size: CGSize) {
         super.init(size:size)
         createPlayers()
         centerPlayer = players[players.count/2]
         setLeftAndRightPlayers()
+    }
+
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     override func didMoveToView(view: SKView) {
@@ -50,20 +54,20 @@ class GameScene: SKScene {
     func createPlayers() {
         let flatUIColors = UIColor.flatUIColors()
         
-        for i in 0..9 {
+        for i in 0..<9 {
             let player = SKSpriteNode(color: flatUIColors[i], size: CGSizeMake(100, 200))
             players.append(player)
         }
     }
     
     func placePlayersOnPositions() {
-        for i in 0..players.count/2 {
+        for i in 0..<players.count/2 {
             players[i].position = CGPointMake(leftGuide, size.height/2)
         }
         
         players[players.count/2].position = CGPointMake(size.width/2, size.height/2)
 
-        for i in players.count/2 + 1..players.count {
+        for i in players.count/2 + 1..<players.count {
             players[i].position = CGPointMake(rightGuide, size.height/2)
         }
         
@@ -78,7 +82,7 @@ class GameScene: SKScene {
     // Helper functions
     
     func calculateScaleForX(x:CGFloat) -> CGFloat {
-        let minScale = 0.5
+        let minScale = CGFloat(0.5)
         
         if x <= leftGuide || x >= rightGuide {
             return minScale
@@ -100,7 +104,7 @@ class GameScene: SKScene {
     func calculateZIndexesForPlayers() {
         var playerCenterIndex : Int = players.count / 2
         
-        for i in 0..players.count {
+        for i in 0..<players.count {
             if centerPlayer == players[i] {
                 playerCenterIndex = i
             }
@@ -110,13 +114,13 @@ class GameScene: SKScene {
             players[i].zPosition = CGFloat(i)
         }
         
-        for i in playerCenterIndex+1..players.count {
+        for i in playerCenterIndex+1..<players.count {
             players[i].zPosition = centerPlayer!.zPosition * 2 - CGFloat(i)
         }
 
     }
     
-    func movePlayerToX(player: SKSpriteNode, x: CGFloat, duration: CGFloat) {
+    func movePlayerToX(player: SKSpriteNode, x: CGFloat, duration: NSTimeInterval) {
         let moveAction = SKAction.moveToX(x, duration: duration)
         let scaleAction = SKAction.scaleTo(calculateScaleForX(x), duration: duration)
 
@@ -158,7 +162,7 @@ class GameScene: SKScene {
     func setLeftAndRightPlayers() {
         var playerCenterIndex : Int = players.count / 2
         
-        for i in 0..players.count {
+        for i in 0..<players.count {
             if centerPlayer == players[i] {
                 playerCenterIndex = i
             }
@@ -193,7 +197,7 @@ class GameScene: SKScene {
         }
     }
     
-    override func touchesMoved(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesMoved(touches: NSSet, withEvent event: UIEvent) {
         let duration = 0.01
         let touch = touches.anyObject() as UITouch
         let newPosition = touch.locationInNode(self)
@@ -201,12 +205,12 @@ class GameScene: SKScene {
         let xTranslation = newPosition.x - oldPosition.x
         
         if CGRectGetMidX(centerPlayer!.frame) > size.width/2 {
-            if leftPlayer {
+            if (leftPlayer != nil) {
                 let actualTranslation = CGRectGetMidX(leftPlayer!.frame) + xTranslation > leftGuide ? xTranslation : leftGuide - CGRectGetMidX(leftPlayer!.frame)
                 movePlayerByX(leftPlayer!, x: actualTranslation)
             }
         } else {
-            if rightPlayer {
+            if (rightPlayer != nil) {
                 let actualTranslation = CGRectGetMidX(rightPlayer!.frame) + xTranslation < rightGuide ? xTranslation : rightGuide - CGRectGetMidX(rightPlayer!.frame)
                 movePlayerByX(rightPlayer!, x: actualTranslation)
             }
@@ -215,19 +219,19 @@ class GameScene: SKScene {
         movePlayerByX(centerPlayer!, x: xTranslation)
     }
     
-    override func touchesEnded(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesEnded(touches: NSSet, withEvent event: UIEvent) {
         let touch = touches.anyObject() as UITouch
         let duration = 0.25
         
         switch zoneOfCenterPlayer() {
             
         case .Left:
-            if rightPlayer {
+            if (rightPlayer != nil) {
                 movePlayerToX(centerPlayer!, x: leftGuide, duration: duration)
-                if leftPlayer {
+                if (leftPlayer != nil) {
                     movePlayerToX(leftPlayer!, x: leftGuide, duration: duration)
                 }
-                if rightPlayer {
+                if (rightPlayer != nil) {
                     movePlayerToX(rightPlayer!, x: size.width/2, duration: duration)
                 }
                 
@@ -238,12 +242,12 @@ class GameScene: SKScene {
             }
             
         case .Right:
-            if leftPlayer {
+            if (leftPlayer != nil) {
                 movePlayerToX(centerPlayer!, x: rightGuide, duration: duration)
-                if rightPlayer {
+                if (rightPlayer != nil) {
                     movePlayerToX(rightPlayer!, x: rightGuide, duration: duration)
                 }
-                if leftPlayer {
+                if (leftPlayer != nil) {
                     movePlayerToX(leftPlayer!, x: size.width/2, duration: duration)
                 }
                 
@@ -255,10 +259,10 @@ class GameScene: SKScene {
             
         case .Center:
             movePlayerToX(centerPlayer!, x: size.width/2, duration: duration)
-            if leftPlayer {
+            if (leftPlayer != nil) {
                 movePlayerToX(leftPlayer!, x: leftGuide, duration: duration)
             }
-            if rightPlayer {
+            if (rightPlayer != nil) {
                 movePlayerToX(rightPlayer!, x: rightGuide, duration: duration)
             }
         }
